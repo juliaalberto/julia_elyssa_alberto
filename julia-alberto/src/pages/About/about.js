@@ -1,5 +1,7 @@
 import './about.css';
 
+import { Link } from "react-router-dom";
+
 const About = () =>{
     return (
       <>
@@ -17,4 +19,4 @@ const About = () =>{
     );
   }
 
-  export default Home;
+  export default About;
