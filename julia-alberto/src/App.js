@@ -1,19 +1,17 @@
 import * as React from "react";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import './App.css';
 
-import Home from './pages/Home/home';
-import About from './pages/About/about';
+import Home from './components/home';
+import About from './components/about';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header>
-        <Router>
 
-
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <ul className="App-header">
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -24,18 +22,20 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
-      </header> */}
-      <Routes>
-        
-        <Route path = "/" element={<Home/>}/>
-        <Route path = "/about" element={<About/>}/> 
-      
-      </Routes>
-      </Router>
-      </header>
+        </a> */}
+            <li> <Link to='/'> Home </Link> </li>
+            <li> <Link to='/about'> About </Link> </li>
+          </ul>
 
+        <Routes>
+          
+          <Route exact path = "/" element={<Home/>}></Route>
+          <Route exact path = "/about" element={<About/>}></Route> 
+        
+        </Routes>
+     
     </div>
+    </Router>
   );
 }
 
